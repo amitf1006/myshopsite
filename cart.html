@@ -1,0 +1,53 @@
+‏<!DOCTYPE html>
+‏<html lang="he" dir="rtl">
+‏<head>
+‏  <meta charset="UTF-8" />
+‏  <meta name="viewport" content="width=device-width, initial-scale=1" />
+‏  <title>עגלת קניות</title>
+‏  <link rel="stylesheet" href="style.css">
+‏</head>
+
+‏<body>
+‏<header class="top">
+‏  <div>
+‏    <h1 class="title">🛒 עגלת קניות</h1>
+‏    <p class="subtitle">ערכי כמות, מחקי פריטים ובדקי סיכום הזמנה</p>
+‏  </div>
+
+‏  <div class="headerRight">
+‏    <a class="cartLink" href="index1.html">⬅️ חזרה לחנות</a>
+‏  </div>
+‏</header>
+
+‏<main class="container cartPage">
+‏  <section class="card">
+‏    <div class="cardHeader">
+‏      <h2 class="cardTitle">הפריטים בעגלה</h2>
+‏      <button class="btnGhost" id="clearCartBtn" type="button">ניקוי עגלה</button>
+‏    </div>
+
+‏    <div id="cartItems" class="cartItems"></div>
+
+‏    <div id="emptyCart" class="empty hidden">
+      העגלה ריקה כרגע. <a href="index1.html">לחצי כדי לבחור מוצרים</a>
+‏    </div>
+‏  </section>
+
+‏  <aside class="card">
+‏    <h2 class="cardTitle">סיכום הזמנה</h2>
+
+‏    <div class="line"><span>סכום ביניים</span><strong><span id="subtotal">0</span>₪</strong></div>
+‏    <div class="line"><span>משלוח</span><strong><span id="shipping">30</span>₪</strong></div>
+‏    <hr class="divider">
+‏    <div class="line total"><span>סה״כ לתשלום</span><strong><span id="total">0</span>₪</strong></div>
+
+‏    <button class="btnPrimary" id="checkoutBtn" type="button">מעבר לתשלום (דמו)</button>
+‏    <div id="checkoutMsg" class="checkoutMsg hidden"></div>
+‏  </aside>
+‏</main>
+
+‏<footer class="footer">© חנות דמו</footer>
+
+‏<script src="app.js"></script>
+‏</body>
+‏</html>

@@ -1,0 +1,309 @@
+/* Reset בסיסי */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body{
+  font-family: Arial, sans-serif;
+  background:#f3f4f6;
+  color:#111827;
+  line-height:1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Layout */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px 28px;
+}
+
+/* Header */
+.top{
+  max-width:1100px;
+  margin:0 auto;
+  padding:16px 16px 12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  flex-wrap: wrap;              /* חשוב לטלפון */
+}
+
+.title{ margin:0; font-size:22px; }
+.subtitle{ margin:4px 0 0; color:#6b7280; font-size:13px; }
+
+.headerRight{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;               /* חשוב לטלפון */
+}
+
+.pill{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:999px;
+  padding:8px 12px;
+  font-weight:700;
+}
+
+.cartLink{
+  text-decoration:none;
+  color:#111827;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:10px 12px;            /* טיפה גדול יותר למגע */
+  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.cartLink:hover{ background:#f9fafb; }
+
+.footer{
+  text-align:center;
+  color:#6b7280;
+  font-size:13px;
+  padding:18px 16px;
+}
+
+/* Toolbar */
+.toolbar{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:10px 0 14px;
+}
+.input, .select{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:12px 12px;            /* יותר נוח במובייל */
+  font-size:16px;               /* מונע זום אוטומטי באייפון */
+  outline:none;
+}
+.input{ flex:1; min-width:220px; }
+.select{ min-width:180px; }
+
+/* Products grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px;
+}
+
+/* רספונסיביות לכרטיסי מוצרים */
+@media (max-width: 980px){
+  .grid{ grid-template-columns:repeat(2, 1fr); }
+}
+@media (max-width: 560px){
+  .grid{ grid-template-columns:1fr; }
+  .title{ font-size:20px; }
+  .headerRight{ width:100%; justify-content:space-between; }
+  .pill{ order:2; } /* אם תרצי שהעגלה תהיה ראשונה */
+}
+
+/* Product card */
+.productCard{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,0.06);
+}
+.productCard img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+.productBody{
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.productName{ margin:0; font-size:15px; }
+.metaRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;               /* חשוב לטלפון */
+}
+.price{ font-weight:900; }
+
+.cat{
+  font-size:12px;
+  color:#374151;
+  background:#f9fafb;
+  border:1px solid #e5e7eb;
+  border-radius:999px;
+  padding:4px 10px;
+  width:max-content;
+}
+
+/* Buttons */
+.addBtn, .btnPrimary{
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  padding:12px 12px;            /* גדול יותר למגע */
+  border-radius:12px;
+  font-weight:900;
+  cursor:pointer;
+}
+.addBtn:hover, .btnPrimary:hover{ background:#1d4ed8; }
+
+.btnGhost{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  padding:10px 12px;
+  border-radius:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+.btnGhost:hover{ background:#f9fafb; }
+
+.btnDanger{
+  background:#fff;
+  border:1px solid #fecaca;
+  color:#b91c1c;
+  padding:10px 10px;
+  border-radius:12px;
+  font-weight:900;
+  cursor:pointer;
+}
+.btnDanger:hover{ background:#fff1f2; }
+
+/* Cart page layout */
+.cartPage{
+  display:grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap:14px;
+  align-items:start;
+}
+
+/* בטלפון: עמודה אחת */
+@media (max-width: 900px){
+  .cartPage{ grid-template-columns:1fr; }
+}
+
+.card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.06);
+}
+
+.cardHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+  flex-wrap: wrap;              /* חשוב לטלפון */
+}
+.cardTitle{ margin:0; font-size:16px; }
+
+.cartItems{ display:grid; gap:12px; }
+
+/* Cart item */
+.cartItem{
+  display:grid;
+  grid-template-columns: 84px 1fr;
+  gap:12px;
+  padding:12px;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  background:#fff;
+}
+
+.cartItem img{
+  width:84px;
+  height:84px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid #e5e7eb;
+}
+
+/* בטלפון קטן: להפוך לשורה אנכית */
+@media (max-width: 420px){
+  .cartItem{
+    grid-template-columns: 1fr;
+  }
+  .cartItem img{
+    width:100%;
+    height:170px;
+  }
+}
+
+.cartTop{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:flex-start;
+  flex-wrap: wrap;              /* חשוב לטלפון */
+}
+.cartName{ margin:0; font-size:14px; }
+.cartMeta{
+  margin-top:4px;
+  color:#6b7280;
+  font-size:13px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.qtyRow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:10px;
+}
+
+.qtyBtn{
+  width:40px;
+  height:40px;                  /* גדול יותר למגע */
+  border-radius:12px;
+  border:1px solid #e5e7eb;
+  background:#fff;
+  font-weight:900;
+  cursor:pointer;
+}
+.qtyBtn:hover{ background:#f9fafb; }
+
+.qty{
+  min-width:28px;
+  text-align:center;
+  font-weight:900;
+  font-size:16px;
+}
+
+.line{ display:flex; justify-content:space-between; margin:10px 0; }
+.divider{ border:none; border-top:1px solid #e5e7eb; margin:12px 0; }
+.total{ font-size:16px; }
+
+.empty{
+  padding:12px;
+  border:1px dashed #e5e7eb;
+  border-radius:14px;
+  color:#6b7280;
+}
+.hidden{ display:none !important; }
+
+.checkoutMsg{
+  margin-top:10px;
+  padding:10px;
+  border-radius:12px;
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  color:#1e3a8a;
+  font-size:13px;
+}
+
+/* שיפור קטן: כפתורים בעגלה למובייל שיהיו נוחים */
+@media (max-width: 560px){
+  .btnPrimary{ width:100%; }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>חנות דמו | אתר 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="top">
+  <div>
+    <h1 class="title">🛍️ חנות דמו</h1>
+    <p class="subtitle">בחרי מוצרים והוסיפי לעגלה</p>
+  </div>
+
+  <div class="headerRight">
+    <div class="pill">🚚 משלוח קבוע: <strong>30₪</strong></div>
+    <a class="cartLink" href="cart.html">🛒 לעגלה (<span id="cartCount">0</span>)</a>
+  </div>
+</header>
+
+<main class="container">
+  <div class="toolbar">
+    <input id="searchInput" class="input" type="search" placeholder="חיפוש מוצר..." />
+    <select id="categorySelect" class="select">
+      <option value="all">כל הקטגוריות</option>
+      <option value="clothes">בגדים</option>
+      <option value="gadgets">מכשירים</option>
+    </select>
+  </div>
+
+  <section class="grid" id="products"></section>
+</main>
+
+<footer class="footer">© חנות דמו</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
