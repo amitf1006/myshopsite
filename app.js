@@ -1,7 +1,7 @@
 const SHIPPING = 30;
 const CART_KEY = "my_demo_cart_v1";
 
-/* מוצרים + תמונות מתאימות (Unsplash לפי מילת חיפוש) */
+/* מוצרים */
 const PRODUCTS = [
   // בגדים
   { id:"c1", name:"חולצת טי־שירט לבנה", category:"clothes", price:80,  imgQ:"white t-shirt" },
@@ -20,7 +20,7 @@ const PRODUCTS = [
   { id:"g6", name:"עכבר אלחוטי",         category:"gadgets", price:99,  imgQ:"wireless mouse" },
 ];
 
-// תמונות יציבות (קבועות) לכל מוצר — עובד מצוין ב-GitHub Pages ובטלפון
+// תמונות יציבות (קבועות)
 const PRODUCT_IMAGES = {
   c1: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=70",
   c2: "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=70",
@@ -37,9 +37,20 @@ const PRODUCT_IMAGES = {
   g6: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=70",
 };
 
+// תמונת גיבוי אם משהו לא נטען
+const FALLBACK_IMG =
+  "data:image/svg+xml;charset=UTF-8," +
+  encodeURIComponent(`
+  <svg xmlns="http://www.w3.org/2000/svg" width="900" height="650">
+    <rect width="100%" height="100%" fill="#e5e7eb"/>
+    <text x="50%" y="50%" text-anchor="middle" font-family="Arial" font-size="44" fill="#111827">
+      אין תמונה
+    </text>
+  </svg>
+`);
+
 function imgUrl(product) {
-  // product הוא אובייקט מוצר
-  return PRODUCT_IMAGES[product.id] || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=70";
+  return PRODUCT_IMAGES[product.id] || FALLBACK_IMG;
 }
 
 function getProduct(id){
@@ -93,7 +104,7 @@ function renderHome(){
 
     grid.innerHTML = filtered.map(p => `
       <article class="productCard">
-        <img src="${imgUrl(p.imgQ)}" alt="${p.name}">
+        <img src="${imgUrl(p)}" alt="${p.name}" onerror="this.src='${FALLBACK_IMG}'">
         <div class="productBody">
           <h3 class="productName">${p.name}</h3>
           <div class="cat">${p.category === "clothes" ? "בגדים" : "מכשירים"}</div>
@@ -158,14 +169,12 @@ function renderCart(){
       const p = getProduct(id);
       const qty = cart[id];
       if (!p) return null;
-      return { id, name:p.name, price:p.price, qty, img:imgUrl(p) };
-
+      return { id, name: p.name, price: p.price, qty, img: imgUrl(p) };
     }).filter(Boolean);
 
     wrap.innerHTML = lines.map(l => `
       <div class="cartItem">
-        <img src="${imgUrl(p)}" alt="${p.name}">
-
+        <img src="${l.img}" alt="${l.name}" onerror="this.src='${FALLBACK_IMG}'">
         <div>
           <div class="cartTop">
             <div>
