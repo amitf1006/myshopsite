@@ -20,8 +20,26 @@ const PRODUCTS = [
   { id:"g6", name:"עכבר אלחוטי",         category:"gadgets", price:99,  imgQ:"wireless mouse" },
 ];
 
-function imgUrl(q){
-  return `https://source.unsplash.com/featured/800x600?${encodeURIComponent(q)}`;
+// תמונות יציבות (קבועות) לכל מוצר — עובד מצוין ב-GitHub Pages ובטלפון
+const PRODUCT_IMAGES = {
+  c1: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=70",
+  c2: "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=70",
+  c3: "https://images.unsplash.com/photo-1520975958225-5f61d92e99d2?auto=format&fit=crop&w=900&q=70",
+  c4: "https://images.unsplash.com/photo-1520975682224-06d0f0c2f23b?auto=format&fit=crop&w=900&q=70",
+  c5: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=70",
+  c6: "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=900&q=70",
+
+  g1: "https://images.unsplash.com/photo-1518449082505-8a7f2b3a1f0b?auto=format&fit=crop&w=900&q=70",
+  g2: "https://images.unsplash.com/photo-1583863788434-e58a36330d34?auto=format&fit=crop&w=900&q=70",
+  g3: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=70",
+  g4: "https://images.unsplash.com/photo-1512446816042-444d64126772?auto=format&fit=crop&w=900&q=70",
+  g5: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=70",
+  g6: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=70",
+};
+
+function imgUrl(product) {
+  // product הוא אובייקט מוצר
+  return PRODUCT_IMAGES[product.id] || "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=70";
 }
 
 function getProduct(id){
@@ -140,12 +158,14 @@ function renderCart(){
       const p = getProduct(id);
       const qty = cart[id];
       if (!p) return null;
-      return { id, name:p.name, price:p.price, qty, img:imgUrl(p.imgQ) };
+      return { id, name:p.name, price:p.price, qty, img:imgUrl(p) };
+
     }).filter(Boolean);
 
     wrap.innerHTML = lines.map(l => `
       <div class="cartItem">
-        <img src="${l.img}" alt="${l.name}">
+        <img src="${imgUrl(p)}" alt="${p.name}">
+
         <div>
           <div class="cartTop">
             <div>
