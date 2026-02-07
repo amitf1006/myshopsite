@@ -4,53 +4,59 @@ const CART_KEY = "my_demo_cart_v1";
 /* מוצרים */
 const PRODUCTS = [
   // בגדים
-  { id:"c1", name:"חולצת טי־שירט לבנה", category:"clothes", price:80,  imgQ:"white t-shirt" },
-  { id:"c2", name:"מכנס ג׳ינס כחול",     category:"clothes", price:120, imgQ:"blue jeans" },
-  { id:"c3", name:"קפוצ׳ון שחור",        category:"clothes", price:150, imgQ:"black hoodie" },
-  { id:"c4", name:"שמלת קיץ",            category:"clothes", price:179, imgQ:"summer dress" },
-  { id:"c5", name:"נעלי סניקרס",         category:"clothes", price:249, imgQ:"sneakers shoes" },
-  { id:"c6", name:"כובע מצחייה",         category:"clothes", price:59,  imgQ:"baseball cap" },
+  { id:"c1", name:"חולצת טי־שירט לבנה", category:"clothes", price:80 },
+  { id:"c2", name:"מכנס ג׳ינס כחול",     category:"clothes", price:120 },
+  { id:"c3", name:"קפוצ׳ון שחור",        category:"clothes", price:150 },
+  { id:"c4", name:"שמלת קיץ",            category:"clothes", price:179 },
+  { id:"c5", name:"נעלי סניקרס",         category:"clothes", price:249 },
+  { id:"c6", name:"כובע מצחייה",         category:"clothes", price:59 },
 
   // מכשירים
-  { id:"g1", name:"אוזניות אלחוטיות",    category:"gadgets", price:249, imgQ:"wireless headphones" },
-  { id:"g2", name:"מטען מהיר USB-C",     category:"gadgets", price:79,  imgQ:"usb-c charger" },
-  { id:"g3", name:"שעון חכם",            category:"gadgets", price:329, imgQ:"smartwatch" },
-  { id:"g4", name:"רמקול בלוטות׳",       category:"gadgets", price:199, imgQ:"bluetooth speaker" },
-  { id:"g5", name:"מקלדת אלחוטית",       category:"gadgets", price:189, imgQ:"wireless keyboard" },
-  { id:"g6", name:"עכבר אלחוטי",         category:"gadgets", price:99,  imgQ:"wireless mouse" },
+  { id:"g1", name:"אוזניות אלחוטיות",    category:"gadgets", price:249 },
+  { id:"g2", name:"מטען מהיר USB-C",     category:"gadgets", price:79 },
+  { id:"g3", name:"שעון חכם",            category:"gadgets", price:329 },
+  { id:"g4", name:"רמקול בלוטות׳",       category:"gadgets", price:199 },
+  { id:"g5", name:"מקלדת אלחוטית",       category:"gadgets", price:189 },
+  { id:"g6", name:"עכבר אלחוטי",         category:"gadgets", price:99 },
 ];
 
-// תמונות יציבות (קבועות)
-const PRODUCT_IMAGES = {
-  c1: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=70",
-  c2: "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=70",
-  c3: "https://images.unsplash.com/photo-1520975958225-5f61d92e99d2?auto=format&fit=crop&w=900&q=70",
-  c4: "https://images.unsplash.com/photo-1520975682224-06d0f0c2f23b?auto=format&fit=crop&w=900&q=70",
-  c5: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=70",
-  c6: "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=900&q=70",
-
-  g1: "https://images.unsplash.com/photo-1518449082505-8a7f2b3a1f0b?auto=format&fit=crop&w=900&q=70",
-  g2: "https://images.unsplash.com/photo-1583863788434-e58a36330d34?auto=format&fit=crop&w=900&q=70",
-  g3: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=70",
-  g4: "https://images.unsplash.com/photo-1512446816042-444d64126772?auto=format&fit=crop&w=900&q=70",
-  g5: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=70",
-  g6: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=900&q=70",
-};
-
-// תמונת גיבוי אם משהו לא נטען
-const FALLBACK_IMG =
-  "data:image/svg+xml;charset=UTF-8," +
-  encodeURIComponent(`
-  <svg xmlns="http://www.w3.org/2000/svg" width="900" height="650">
-    <rect width="100%" height="100%" fill="#e5e7eb"/>
-    <text x="50%" y="50%" text-anchor="middle" font-family="Arial" font-size="44" fill="#111827">
-      אין תמונה
-    </text>
-  </svg>
-`);
+/* ==== תמונות מובנות בקוד (SVG Data URL) – תמיד עובד ==== */
+function escapeXml(str) {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
+}
 
 function imgUrl(product) {
-  return PRODUCT_IMAGES[product.id] || FALLBACK_IMG;
+  const bg1 = product.category === "clothes" ? "#dbeafe" : "#dcfce7";
+  const bg2 = product.category === "clothes" ? "#bfdbfe" : "#bbf7d0";
+  const icon = product.category === "clothes" ? "👕" : "📱";
+  const name = escapeXml(product.name);
+
+  const svg = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="900" height="650">
+    <defs>
+      <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0%" stop-color="${bg1}"/>
+        <stop offset="100%" stop-color="${bg2}"/>
+      </linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#g)"/>
+    <text x="50%" y="38%" text-anchor="middle" font-size="110">${icon}</text>
+    <text x="50%" y="57%" text-anchor="middle"
+          font-family="Arial" font-size="44" font-weight="700" fill="#111827">
+      ${name}
+    </text>
+    <text x="50%" y="68%" text-anchor="middle"
+          font-family="Arial" font-size="26" fill="#374151">
+      תמונת דמו (מובנית בקוד)
+    </text>
+  </svg>`.trim();
+
+  return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
 }
 
 function getProduct(id){
@@ -104,7 +110,7 @@ function renderHome(){
 
     grid.innerHTML = filtered.map(p => `
       <article class="productCard">
-        <img src="${imgUrl(p)}" alt="${p.name}" onerror="this.src='${FALLBACK_IMG}'">
+        <img src="${imgUrl(p)}" alt="${p.name}">
         <div class="productBody">
           <h3 class="productName">${p.name}</h3>
           <div class="cat">${p.category === "clothes" ? "בגדים" : "מכשירים"}</div>
@@ -169,12 +175,12 @@ function renderCart(){
       const p = getProduct(id);
       const qty = cart[id];
       if (!p) return null;
-      return { id, name: p.name, price: p.price, qty, img: imgUrl(p) };
+      return { id, name:p.name, price:p.price, qty, img: imgUrl(p) };
     }).filter(Boolean);
 
     wrap.innerHTML = lines.map(l => `
       <div class="cartItem">
-        <img src="${l.img}" alt="${l.name}" onerror="this.src='${FALLBACK_IMG}'">
+        <img src="${l.img}" alt="${l.name}">
         <div>
           <div class="cartTop">
             <div>
