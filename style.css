@@ -316,3 +316,9 @@ body{
   background: #fff !important;
 }
 
+/* גם בעגלה – לא נחתך */
+.cartItem img{
+  object-fit: contain !important;
+  background: #fff !important;
+}
+
