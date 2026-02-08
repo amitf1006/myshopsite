@@ -20,7 +20,7 @@ const PRODUCTS = [
   { id:"g3", name:"שעון חכם",               category:"gadgets", price:329, img:"images/watch.png" },
   { id:"g4", name:"רמקול אלחוטי",          category:"gadgets", price:199, img:"images/speakr.png" },
   { id:"g5", name:"מקלדת",                 category:"gadgets", price:189, img:"images/keyboard.jpg" },
-  { id:"g6", name:"אוזניות אלחוטיות",       category:"gadgets", price:279, img:"images/headphonesbluetooth.jpg" },
+  { id:"g6", name:"אוזניות אלחוטיות",       category:"gadgets", price:279, img:"images/headphonesbluetooth.png" },
 ];
 
 /* ==== תמונות מובנות בקוד (SVG Data URL) – תמיד עובד ==== */
