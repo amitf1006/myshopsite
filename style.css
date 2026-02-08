@@ -113,9 +113,9 @@ body{
 }
 .productCard img{
   width:100%;
-  height:180px;
-  object-fit:cover;
-  display:block;
+  height:220px;       /* אפשר 200–260 */
+  object-fit:contain; /* לא חותך */
+  background:#fff;    /* כדי שהשוליים ייראו נקי */
 }
 .productBody{
   padding:12px;
