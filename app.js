@@ -18,7 +18,7 @@ const PRODUCTS = [
   { id:"g1", name:"אוזניות אלחוטיות",      category:"gadgets", price:249, img:"images/headphones.jpg" },
   { id:"g2", name:"מטען USB-C",             category:"gadgets", price:79,  img:"images/charger.png" },
   { id:"g3", name:"שעון חכם",               category:"gadgets", price:329, img:"images/watch.png" },
-  { id:"g4", name:"רמקול אלחוטי",          category:"gadgets", price:199, img:"images/speaker.png" },
+  { id:"g4", name:"רמקול אלחוטי",          category:"gadgets", price:199, img:"images/speakr.png" },
   { id:"g5", name:"מקלדת",                 category:"gadgets", price:189, img:"images/keyboard.jpg" },
   { id:"g6", name:"אוזניות אלחוטיות",       category:"gadgets", price:279, img:"images/headphonesbluetooth.png" },
 ];
