@@ -307,3 +307,12 @@ body{
 @media (max-width: 560px){
   .btnPrimary{ width:100%; }
 }
+
+/* תיקון בטוח לתמונות מוצרים – לא נחתך */
+.productCard img{
+  height: 240px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #fff !important;
+}
+
