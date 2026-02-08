@@ -7,8 +7,8 @@ const PRODUCTS = [
   { id:"c1", name:"חולצת טי־שירט לבנה", category:"clothes", price:80,  img:"images/tshirt.jpg" },
   { id:"c2", name:"מכנס ג׳ינס",          category:"clothes", price:120, img:"images/jeans.jpg" },
   { id:"c3", name:"קפוצ׳ון",              category:"clothes", price:150, img:"images/hoodie.jpg" },
-  { id:"c4", name:"שמלת ערב ארוכה",             category:"clothes", price:179, img:"images/dress.jpg" },
-  { id:"c5", name:"נעלי סניקרס",          category:"clothes", price:249, img:"images/sneakers.jpg" },
+  { id:"c4", name:"שמלת ערב ארוכה",             category:"clothes", price:179, img:"images/dress.png" },
+  { id:"c5", name:"נעלי סניקרס",          category:"clothes", price:249, img:"images/sneakers.png" },
   { id:"c6", name:"כובע",                 category:"clothes", price:59,  img:"images/hat.jpg" },
   { id:"c7", name:"ז׳קט ג׳ינס",            category:"clothes", price:199, img:"images/jeansjacket.jpg" },
   { id:"c8", name:"שמלה ערב קצרה",             category:"clothes", price:169, img:"images/shortdress.jpg" },
@@ -16,11 +16,11 @@ const PRODUCTS = [
 
   // מכשירים
   { id:"g1", name:"אוזניות אלחוטיות",      category:"gadgets", price:249, img:"images/headphones.jpg" },
-  { id:"g2", name:"מטען USB-C",             category:"gadgets", price:79,  img:"images/charger.jpg" },
-  { id:"g3", name:"שעון חכם",               category:"gadgets", price:329, img:"images/watch.jpg" },
-  { id:"g4", name:"רמקול אלחוטי",          category:"gadgets", price:199, img:"images/speaker.jpg" },
+  { id:"g2", name:"מטען USB-C",             category:"gadgets", price:79,  img:"images/charger.png" },
+  { id:"g3", name:"שעון חכם",               category:"gadgets", price:329, img:"images/watch.png" },
+  { id:"g4", name:"רמקול אלחוטי",          category:"gadgets", price:199, img:"images/speaker.png" },
   { id:"g5", name:"מקלדת",                 category:"gadgets", price:189, img:"images/keyboard.jpg" },
-  { id:"g6", name:"אוזניות אלחוטיות",       category:"gadgets", price:279, img:"images/headphonesbluetooth.jpg" },
+  { id:"g6", name:"אוזניות אלחוטיות",       category:"gadgets", price:279, img:"images/headphonesbluetooth.png" },
 ];
 
 /* ==== תמונות מובנות בקוד (SVG Data URL) – תמיד עובד ==== */
