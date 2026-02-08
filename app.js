@@ -113,7 +113,7 @@ function renderHome(){
 
     grid.innerHTML = filtered.map(p => `
       <article class="productCard">
-        <img src="${imgUrl(p)}" alt="${p.name}">
+        <img src="${p.img}" alt="${p.name}">
         <div class="productBody">
           <h3 class="productName">${p.name}</h3>
           <div class="cat">${p.category === "clothes" ? "בגדים" : "מכשירים"}</div>
@@ -178,7 +178,7 @@ function renderCart(){
       const p = getProduct(id);
       const qty = cart[id];
       if (!p) return null;
-      return { id, name:p.name, price:p.price, qty, img: imgUrl(p) };
+      return { id, name:p.name, price:p.price, qty, img:p.img };
     }).filter(Boolean);
 
     wrap.innerHTML = lines.map(l => `
