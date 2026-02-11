@@ -1,82 +1,75 @@
-‏<!DOCTYPE html>
-‏<html lang="he" dir="rtl">
-‏<head>
-‏  <meta charset="UTF-8" />
-‏  <meta name="viewport" content="width=device-width, initial-scale=1" />
-‏  <title>עגלת קניות</title>
-‏  <link rel="stylesheet" href="style.css?v=2">
-‏</head>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>עגלת קניות</title>
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
 
-‏<body>
-‏<header class="top">
-‏  <div>
-‏    <h1 class="title">🛒 עגלת קניות</h1>
-‏    <p class="subtitle">ערוך כמות, מחקי פריטים ובדוק סיכום הזמנה</p>
-‏  </div>
+<body>
+<header class="top">
+  <div>
+    <h1 class="title">🛒 עגלת קניות</h1>
+    <p class="subtitle">ערוך כמות, מחקי פריטים ובדוק סיכום הזמנה</p>
+  </div>
 
-‏  <div class="headerRight">
-‏    <a class="cartLink" href="index1.html">⬅️ חזרה לחנות</a>
-‏  </div>
-‏</header>
+  <div class="headerRight">
+    <a class="cartLink" href="index1.html">⬅️ חזרה לחנות</a>
+  </div>
+</header>
 
-‏<main class="container cartPage">
-‏  <section class="card">
-‏    <div class="cardHeader">
-‏      <h2 class="cardTitle">הפריטים בעגלה</h2>
-‏      <button class="btnGhost" id="clearCartBtn" type="button">ניקוי עגלה</button>
-‏    </div>
+<main class="container cartPage">
+  <section class="card">
+    <div class="cardHeader">
+      <h2 class="cardTitle">הפריטים בעגלה</h2>
+      <button class="btnGhost" id="clearCartBtn" type="button">ניקוי עגלה</button>
+    </div>
 
-‏    <div id="cartItems" class="cartItems"></div>
+    <div id="cartItems" class="cartItems"></div>
 
-‏    <div id="emptyCart" class="empty hidden">
+    <div id="emptyCart" class="empty hidden">
       העגלה ריקה כרגע. <a href="index1.html">לחץ כדי לבחור מוצרים</a>
-‏    </div>
-‏  </section>
+    </div>
+  </section>
 
-‏  <aside class="card">
-‏    <h2 class="cardTitle">סיכום הזמנה</h2>
+  <aside class="card">
+    <h2 class="cardTitle">סיכום הזמנה</h2>
 
-‏    <div class="summaryBox">
-  <div class="summaryRow subtotalRow">
-    <span>🧾 סכום קנייה</span>
-    <span><strong id="subtotal">0</strong>₪</span>
+    <div class="summaryBox">
+      <div class="summaryRow subtotalRow">
+        <span>🧾 סכום קנייה</span>
+        <span><strong id="subtotal">0</strong>₪</span>
+      </div>
+
+      <div class="summaryRow shippingRow shippingLine">
+        <span>🚚 משלוח</span>
+        <span><strong id="shipping">30</strong>₪</span>
+      </div>
+
+      <hr class="summaryDivider">
+
+      <div class="summaryRow totalRow">
+        <span>💳 סה״כ לתשלום</span>
+        <span><strong id="total">30</strong>₪</span>
+      </div>
+    </div>
+
+    <button class="btnPrimary" id="checkoutBtn" type="button">מעבר לתשלום (דמו)</button>
+    <div id="checkoutMsg" class="checkoutMsg hidden"></div>
+  </aside>
+
+  <!-- באנר הנחיה לשאלון (נשאר רק זה) -->
+  <div class="surveyBannerGlow" role="note" aria-live="polite">
+    <span class="surveyBannerIcon">📝</span>
+    <span class="surveyBannerText">
+      בסיום הקנייה יש לחזור לדף השאלון ולהמשיך אותו
+    </span>
   </div>
-
-  <div class="summaryRow shippingRow shippingLine">
-    <span>🚚 משלוח</span>
-    <span><strong id="shipping">30</strong>₪</span>
-  </div>
-
-  <hr class="summaryDivider">
-
-  <div class="summaryRow totalRow">
-    <span>💳 סה״כ לתשלום</span>
-    <span><strong id="total">30</strong>₪</span>
-  </div>
-
-  <div class="summaryHint">כולל משלוח. בסיום הקנייה חזרו לשאלון 📝</div>
-</div>
-
-
-‏    <hr class="divider">
-‏    <div class="line total"><span>סה״כ לתשלום</span><strong><span id="total">0</span>₪</strong></div>
-
-‏    <button class="btnPrimary" id="checkoutBtn" type="button">מעבר לתשלום (דמו)</button>
-‏    <div id="checkoutMsg" class="checkoutMsg hidden"></div>
-‏  </aside>
-<div class="surveyBannerGlow" role="note" aria-live="polite">
-  <span class="surveyBannerIcon">📝</span>
-  <span class="surveyBannerText">
-    בסיום הקנייה יש לחזור לדף השאלון ולהמשיך אותו
-  </span>
-</div>
-
-
-‏</main>
+</main>
 
 <footer class="footer">© החנות שלנו</footer>
 
-
-<script src="app.js?v=18"></script>
-‏</body>
-‏</html>
+<script src="app.js?v=20"></script>
+</body>
+</html>
