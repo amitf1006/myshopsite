@@ -506,3 +506,70 @@ body{
     padding:16px 14px;
   }
 }
+
+  /* ===== סיכום תשלום מעוצב בעגלה ===== */
+.summaryBox{
+  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(229,231,235,0.9);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+}
+
+.summaryRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  font-weight: 900;
+}
+
+.summaryRow strong{
+  font-size: 18px;
+}
+
+/* סכום קנייה */
+.subtotalRow{
+  background: linear-gradient(90deg, #eff6ff 0%, #ffffff 70%);
+  border: 1px solid rgba(59,130,246,0.25);
+}
+.subtotalRow strong{ color:#1d4ed8; }
+
+/* משלוח – בולט */
+.shippingRow{
+  background: linear-gradient(90deg, #fff7ed 0%, #ffffff 70%);
+  border: 2px dashed rgba(245,158,11,0.55);
+}
+.shippingRow strong{ color:#b45309; font-size:20px; }
+
+/* קו הפרדה */
+.summaryDivider{
+  border:none;
+  border-top: 1px solid #e5e7eb;
+  margin: 12px 2px;
+}
+
+/* סה״כ לתשלום – הכי בולט */
+.totalRow{
+  background: linear-gradient(90deg, #ecfdf5 0%, #ffffff 70%);
+  border: 2px solid rgba(34,197,94,0.35);
+  box-shadow: 0 10px 24px rgba(34,197,94,0.14);
+}
+.totalRow strong{
+  color:#047857;
+  font-size: 22px;
+}
+
+/* טקסט קטן מתחת */
+.summaryHint{
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #fefce8;
+  border: 1px solid #fde68a;
+  color:#92400e;
+  font-size: 13px;
+  font-weight: 800;
+}
