@@ -419,20 +419,34 @@ body{
     text-align: center;
     justify-content: center;
   }
-}
 
+  /* ===== הדגשת משלוח בעגלת קניות ===== */
 .shippingLine{
-  padding: 12px 14px;
-  border-radius: 14px;
+  position: relative;
+  padding: 14px 16px;
+  margin: 14px 0;
+  border-radius: 16px;
   background: linear-gradient(90deg, #fff7ed 0%, #fffbeb 60%, #fff7ed 100%);
-  border: 2px dashed rgba(245,158,11,0.55);
-  margin: 12px 0;
-  box-shadow: 0 10px 22px rgba(245,158,11,0.18);
+  border: 2px solid #f59e0b;
+  box-shadow: 0 12px 26px rgba(245,158,11,0.22);
   animation: cartShipPulse 1.6s ease-in-out infinite;
 }
 
+/* טקסט */
+.shippingLine span{
+  font-weight: 900;
+  color: #92400e;
+}
+
+/* מחיר */
 .shippingLine #shipping{
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 900;
   color: #b45309;
+}
+
+/* אנימציה */
+@keyframes cartShipPulse{
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
 }
