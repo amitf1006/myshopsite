@@ -420,3 +420,19 @@ body{
     justify-content: center;
   }
 }
+
+.shippingLine{
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #fff7ed 0%, #fffbeb 60%, #fff7ed 100%);
+  border: 2px dashed rgba(245,158,11,0.55);
+  margin: 12px 0;
+  box-shadow: 0 10px 22px rgba(245,158,11,0.18);
+  animation: cartShipPulse 1.6s ease-in-out infinite;
+}
+
+.shippingLine #shipping{
+  font-size: 20px;
+  font-weight: 900;
+  color: #b45309;
+}
