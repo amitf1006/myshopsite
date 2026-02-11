@@ -345,3 +345,9 @@ body{
   }
 }
 
+/* ===== שדרוג כללי לרקע ולאווירה ===== */
+body{
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(59,130,246,0.16), transparent 60%),
+              radial-gradient(900px 500px at 10% 0%, rgba(34,197,94,0.14), transparent 55%),
+              linear-gradient(180deg, #f8fafc 0%, #eef2ff 55%, #f3f4f6 100%);
+}
